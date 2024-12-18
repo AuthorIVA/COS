@@ -1,2 +1,0 @@
-# COS
-COS_test
