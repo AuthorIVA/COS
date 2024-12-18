@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -41,8 +41,69 @@
     <img src="images/image-01.png" alt="Изображение 1">
     <img src="images/image-02.png" alt="Изображение 2">
     <img src="images/image-03.png" alt="Изображение 3">
-    <!-- Добавьте больше изображений по мере необходимости -->
 </div>
 
 </body>
+</html>-->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея изображений</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        img {
+            max-width: 200px; /* Ограничение ширины изображения */
+            height: auto; /* Автоматическая высота для сохранения пропорций */
+            margin: 10px; /* Отступы между изображениями */
+            border: 1px solid #ccc; /* Рамка вокруг изображений */
+            border-radius: 5px; /* Закругленные углы */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Галерея изображений</h1>
+<div class="image-container" id="imageContainer"></div>
+
+<script>
+    // Загружаем JSON-файл с именами изображений
+    fetch('images.json')
+        .then(response => response.json())
+        .then(data => {
+            const images = data.images;
+            const imageContainer = document.getElementById('imageContainer');
+
+            // Проходим по массиву и создаем элементы img
+            images.forEach(image => {
+                const img = document.createElement('img');
+                img.src = image;
+                img.alt = 'Изображение';
+                imageContainer.appendChild(img);
+            });
+        })
+        .catch(error => console.error('Ошибка при загрузке изображений:', error));
+</script>
+
+</body>
 </html>
+
