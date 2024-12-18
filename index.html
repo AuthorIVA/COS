@@ -38,9 +38,10 @@
 
 <h1>Галерея изображений PNG</h1>
 <div class="image-container">
-    {% for image in images %}
-        <img src="{{ url_for('images', filename='images/' + image) }}" alt="Изображение {{ image }}">
-    {% endfor %}
+    <img src="images/image-01.png" alt="Изображение 1">
+    <img src="images/image-02.png" alt="Изображение 2">
+    <img src="images/image-03.png" alt="Изображение 3">
+    <!-- Добавьте больше изображений по мере необходимости -->
 </div>
 
 </body>
