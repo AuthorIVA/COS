@@ -39,7 +39,7 @@
 <h1>Галерея изображений PNG</h1>
 <div class="image-container">
     {% for image in images %}
-        <img src="{{ url_for('static', filename='images/' + image) }}" alt="Изображение {{ image }}">
+        <img src="{{ url_for('images', filename='images/' + image) }}" alt="Изображение {{ image }}">
     {% endfor %}
 </div>
 
